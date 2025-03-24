@@ -1,0 +1,59 @@
+import unittest
+import datetime
+
+movies = {
+    "Inception": {"ratings": [5, 4, 5]},
+    "Interstellar": {"ratings": []},
+}
+
+def rate_a_movie(movie_name, rating):
+    if movie_name in movies:
+        movies[movie_name]["ratings"].append(rating)
+        return f"Rating {rating} added to '{movie_name}'!"
+    else:
+        return "Movie not found."
+
+def view_average_ratings(movie_name):
+    if movie_name in movies:
+        ratings = movies[movie_name]["ratings"]
+        if ratings:
+            average = sum(ratings) / len(ratings)
+            return f"Average rating for '{movie_name}' is: {average}"
+        else:
+            return f"'{movie_name}' has no ratings yet."
+    else:
+        return "Movie not found."
+
+class TestMovieRatingFunctions(unittest.TestCase):
+    def test_rate_a_movie_function_works(self):
+        movie_name = "Inception"
+        rating = 4
+        actual = rate_a_movie(movie_name, rating)
+        expected = f"Rating {rating} added to '{movie_name}'!"
+        self.assertEqual(actual, expected)
+        self.assertIn(rating, movies[movie_name]["ratings"])
+
+    def test_rate_a_movie_function_with_nonexistent_movie(self):
+        movie_name = "Unknown Movie"
+        rating = 3
+        actual = rate_a_movie(movie_name, rating)
+        expected = "Movie not found."
+        self.assertEqual(actual, expected)
+
+    def test_that_view_average_ratings_function_works(self):
+        movie_name = "Inception"
+        actual = view_average_ratings(movie_name)
+        expected = f"Average rating for '{movie_name}' is: 4.5"
+        self.assertEqual(actual, expected)
+
+    def test_view_average_ratings_with_no_ratings(self):
+        movie_name = "Interstellar"
+        actual = view_average_ratings(movie_name)
+        expected = f"'{movie_name}' has no ratings yet."
+        self.assertEqual(actual, expected)
+
+    def test_view_average_ratings_with_nonexistent_movie(self):
+        movie_name = "Unknown Movie"
+        actual = view_average_ratings(movie_name)
+        expected = "Movie not found."
+        self.assertEqual(actual, expected)

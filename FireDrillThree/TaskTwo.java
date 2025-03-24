@@ -1,23 +1,27 @@
 import java.util.Scanner;
 import java.util.Arrays;
-public class TaskOne{
+public class TaskTwo{
 	public static void main(String[] args){
 	Scanner input = new Scanner(System.in);
+			System.out.println("Enter the scores: ");
+
 
 	int[] result = new int[10];
 
 		for(int count = 0; count < result.length; count ++){
-		System.out.print("Enter the score: ");
 
-				
-			 result[count] = input.nextInt();
+			result[count] = input.nextInt();
+
+		System.out.println();
 	}
-		System.out.println(Arrays.toString(result));
-	
 
+	for(int count = 0; count < result.length; count ++){
+
+
+		System.out.println(result[count]);
 
 }
 }
+}
 
 
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

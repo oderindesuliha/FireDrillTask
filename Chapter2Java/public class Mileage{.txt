@@ -1,0 +1,11 @@
+public class Mileage{
+
+	public static void main(String... args){		
+		
+	int milesDriven = 0;
+	int gallonsUsed  = 0
+
+
+}
+
+}
