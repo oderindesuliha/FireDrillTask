@@ -1,7 +1,7 @@
 public class SquaresAndCubes{
 
 	public static void main(String[] args){
-dumbers\tsquare\tcube"); 
+   System.out.print("numbers\tsquare\tcube");
 	System.out.println(0 + "  " + 0*0 + "  " +  0*0*0);
 	System.out.println(1 + "  " + 1*1 + "  " +  1*1*1);
 	System.out.println(2 + "  " + 2*2 + "  " +  2*2*2);
@@ -12,7 +12,7 @@ dumbers\tsquare\tcube");
 	System.out.println(7 + "  " + 7*7 + "  " +  7*7*7);
 	System.out.println(8 + "  " + 8*8 + "  " +  8*8*8);
 	System.out.println(9 + "  " + 9*9 + "  " +  9*9*9);
-	System.out.println(10 + "  " + 10*10 + "  "  10*10*10);
+	System.out.println(10 + "  " + 10*10 + "  " + 10*10*10);
 
 			
 }
